@@ -7,9 +7,11 @@ Flutter UI Study用于flutter学习，学习路线包括基础widget、相关插
 ### 开发总结
 - 插件使用
 - 实用widget
-<center class="half">
-  <img src="https://github.com/Asscre/FUS/blob/master/mdimage/engineeringservice.png?raw=true" width = "200" alt="" /><img src="https://github.com/Asscre/FUS/blob/master/mdimage/waterripple.gif?raw=true" width = "200" alt="" /><img src="https://github.com/Asscre/FUS/blob/master/mdimage/radar.gif?raw=true" width = "200" alt="" />
-</center>
+<div>
+  <img src="https://github.com/Asscre/FUS/blob/master/mdimage/engineeringservice.png?raw=true" width = "280" />
+  <img src="https://github.com/Asscre/FUS/blob/master/mdimage/waterripple.gif?raw=true" width = "280" />
+  <img src="https://github.com/Asscre/FUS/blob/master/mdimage/radar.gif?raw=true" width = "280" />
+<div>
 
 ### 进阶学习
 - Dart入门学习
