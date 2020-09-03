@@ -7,7 +7,8 @@ Flutter UI Study用于flutter学习，学习路线包括基础widget、相关插
 ### 开发总结
 - 插件使用
 - 实用widget
-<img src="https://github.com/Asscre/FUS/blob/master/mdimage/engineeringservice.png?raw=true" width = "200" height = "300" alt="" align=center />
+<img src="https://github.com/Asscre/FUS/blob/master/mdimage/engineeringservice.png?raw=true" width = "200" height = "400" alt="" align=center />
+<img src="https://github.com/Asscre/FUS/blob/master/mdimage/waterripple.gif?raw=true" width = "200" height = "400" alt="" align=center />
 
 
 ### 进阶学习
@@ -16,7 +17,7 @@ Flutter UI Study用于flutter学习，学习路线包括基础widget、相关插
 - 相机
 - 语音
 - 地图
-<img src="https://github.com/Asscre/FUS/blob/master/mdimage/study.png?raw=true" width = "200" height = "300" alt="" align=center />
+<img src="https://github.com/Asscre/FUS/blob/master/mdimage/study.png?raw=true" width = "200" height = "400" alt="" align=center />
 
 ### 我的
 - 臭美专场
