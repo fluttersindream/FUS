@@ -15,23 +15,55 @@ class Router {
     routes.addAll(engineeringServiceRouter);
   }
 
-
-  static Route<dynamic> onGenerateRoute(RouteSettings settings) {
-
-    print(settings.name);
-
-    final String name = settings.name;
-    final Function buildCtx = routes[name];
-
-    if (buildCtx == null) {
-      return MaterialPageRoute(builder: (_) => NotFindPage());
+  static toPage(BuildContext context, String routeName, {dynamic arguments}) {
+    if (Router.routes[routeName] == null) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => NotFindPage()),
+      );
     } else {
-      if (settings.arguments == null) {
-        return MaterialPageRoute(builder: buildCtx()());
+      if (arguments == null) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: Router.routes[routeName](),
+          ),
+        );
       } else {
-        return MaterialPageRoute(builder: buildCtx(settings.arguments));
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: Router.routes[routeName](arguments),
+          ),
+        );
       }
     }
   }
-}
 
+  static Future toCBPage(BuildContext context, String routeName, {dynamic arguments}) async {
+    var cbData;
+    if (Router.routes[routeName] == null) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => NotFindPage()),
+      );
+    } else {
+      if (arguments == null) {
+        cbData = await Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: Router.routes[routeName](),
+          ),
+        );
+      } else {
+        cbData = await Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: Router.routes[routeName](arguments),
+          ),
+        );
+      }
+    }
+    return cbData;
+  }
+}
