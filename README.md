@@ -24,7 +24,7 @@ Flutter UI Study用于flutter学习，学习路线包括基础widget、相关插
 <img src="https://github.com/Asscre/FUS/blob/master/mdimage/study.png?raw=true" width = "200" height = "400" alt="" align=center />
 
 ### 我的
-- Futter Sin Dream团队
+- Flutter Sin Dream团队
 
 ## 项目期望
     成为一个跟随Flutter成长的Flutter爱好者app，未来开启留言帖子的功能。
