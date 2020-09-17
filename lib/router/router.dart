@@ -1,6 +1,7 @@
 import 'package:FUS/page/home_pege.dart';
-import 'package:FUS/page/not_find_page.dart';
+import 'package:FUS/page/commom/not_find_page.dart';
 import 'package:FUS/router/engineering_service_router.dart';
+import 'package:FUS/router/study_router.dart';
 import 'package:flutter/material.dart';
 
 /// Author: Asscre
@@ -13,6 +14,7 @@ class Router {
 
   void initRouters() {
     routes.addAll(engineeringServiceRouter);
+    routes.addAll(studyRouter);
   }
 
   static toPage(BuildContext context, String routeName, {dynamic arguments}) {

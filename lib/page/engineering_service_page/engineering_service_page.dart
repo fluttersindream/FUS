@@ -9,7 +9,7 @@ class EngineeringServicePage extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomPadding: true,
       appBar: AppBarWidget(
-        'Flutter学习',
+        'Up Up Up',
         context,
         showBackBtn: false,
       ),
@@ -41,9 +41,9 @@ class EngineeringServicePage extends StatelessWidget {
     return l;
   }
 
-  Route _toPage(Widget router) {
-    return MaterialPageRoute(
-      builder: (context) => router,
-    );
-  }
+  // Route _toPage(Widget router) {
+  //   return MaterialPageRoute(
+  //     builder: (context) => router,
+  //   );
+  // }
 }

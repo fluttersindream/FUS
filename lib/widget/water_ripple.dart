@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-
 /// Author: Asscre
 /// Editing time: 2020/8/26
 class WaterRipple extends StatefulWidget {

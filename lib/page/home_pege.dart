@@ -1,10 +1,10 @@
 import 'package:FUS/config/style.dart';
-import 'package:FUS/page/study_page.dart';
+import 'package:FUS/page/study_page/study_page.dart';
 import 'package:FUS/pubs/screen_util.dart';
 import 'package:flutter/material.dart';
 
-import 'engineering_service_page.dart';
-import 'mine_page.dart';
+import 'engineering_service_page/engineering_service_page.dart';
+import 'mine/mine_page.dart';
 
 /// Author: Asscre
 /// Editing time: 2020/8/26
@@ -27,22 +27,22 @@ class _HomePageState extends State<HomePage> {
     super.initState();
 
     pageList = [
-      EngineeringServicePage(),
       StudyPage(),
+      EngineeringServicePage(),
       MinePage(),
     ];
 
     navBar = [
       BottomNavigationBarItem(
         icon: Icon(
-          IconData(0xe602, fontFamily: 'iconfont'),
+          IconData(0xe603, fontFamily: 'iconfont'),
           size: sp(48),
         ),
         title: Text(''),
       ),
       BottomNavigationBarItem(
         icon: Icon(
-          IconData(0xe603, fontFamily: 'iconfont'),
+          IconData(0xe602, fontFamily: 'iconfont'),
           size: sp(48),
         ),
         title: Text(''),

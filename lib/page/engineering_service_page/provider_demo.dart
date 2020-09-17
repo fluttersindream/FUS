@@ -1,5 +1,6 @@
 import 'package:FUS/config/style.dart';
 import 'package:FUS/pubs/provider_widget.dart';
+import 'package:FUS/widget/appbar_widget.dart';
 import 'package:FUS/widget/explain_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -39,10 +40,7 @@ class ProviderPage extends StatelessWidget {
       model: ProviderProvider(),
       builder: (BuildContext context, Widget child) {
         return Scaffold(
-          appBar: AppBar(
-            backgroundColor: Style.red,
-            title: Text('Provider使用'),
-          ),
+          appBar: AppBarWidget('Provider使用', context),
           body: ListView(
             children: <Widget>[
               _tip(),
