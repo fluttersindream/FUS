@@ -12,9 +12,9 @@ import 'package:permission_handler/permission_handler.dart';
  * @Descripttion:
  * @version:
  * @Author: Asscre
- * @Date: 2020-09-24 11:44:44
+ * @Date: 2020-09-24 11:44
  * @LastEditors: Asscre
- * @LastEditTime: 2020-09-24 11:44:44
+ * @LastEditTime: 2020-09-25 09:53
  */
 enum AudioState {
   /// 音频播放中
@@ -71,7 +71,7 @@ class RecordWidgetProvider with ChangeNotifier {
     init();
   }
 
-  Future<void> _initializeExample(bool withUI) async {
+  Future<void> _initializeExample() async {
     await _flutterSoundPlayer.closeAudioSession();
 
     await _flutterSoundPlayer.openAudioSession(
@@ -90,7 +90,7 @@ class RecordWidgetProvider with ChangeNotifier {
         category: SessionCategory.playAndRecord,
         mode: SessionMode.modeDefault,
         device: AudioDevice.speaker);
-    await _initializeExample(false);
+    await _initializeExample();
   }
 
   @override
@@ -146,7 +146,7 @@ class RecordWidgetProvider with ChangeNotifier {
         _playerSubscription = _flutterSoundPlayer.onProgress.listen((e) {
           if (e != null && e.duration != null) {
             DateTime date = new DateTime.fromMillisecondsSinceEpoch(
-              e.duration.inMilliseconds,
+              e.position.inMilliseconds,
               isUtc: true,
             );
             dbLevel = date.second;
