@@ -17,7 +17,8 @@ class _StudyPageState extends State<StudyPage> {
     super.initState();
     _list = [
       ListItemModel('Dart', () {}),
-      ListItemModel('Flutter Widget', () {}),
+      ListItemModel(
+          'Flutter Widget', () => Router.toPage(context, 'flutterWidgetPage')),
       ListItemModel('相机', () {}),
       ListItemModel('语音', () => Router.toPage(context, 'soundWidgetPage')),
       ListItemModel('地图', () {}),
