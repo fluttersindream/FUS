@@ -65,6 +65,9 @@ class RecordWidgetProvider with ChangeNotifier {
   FlutterSoundPlayer _flutterSoundPlayer;
   FlutterSoundRecorder _flutterSoundRecorder;
 
+  double percentage = 0.0;
+  double newPercentage = 0.0;
+
   RecordWidgetProvider() {
     _flutterSoundPlayer = FlutterSoundPlayer();
     _flutterSoundRecorder = FlutterSoundRecorder();
@@ -156,6 +159,12 @@ class RecordWidgetProvider with ChangeNotifier {
             String dateInString = outputFormat.format(dateTime);
             recorderTxt = dateInString;
             print(recorderTxt);
+            percentage = newPercentage;
+            newPercentage += 1;
+            if (newPercentage > 60.0) {
+              percentage = 0.0;
+              newPercentage = 0.0;
+            }
             notifyListeners();
           }
         });
@@ -164,6 +173,7 @@ class RecordWidgetProvider with ChangeNotifier {
         throw RecordingPermissionException("未找到文件路径");
       }
     } catch (err) {
+      newPercentage = 0.0;
       audioState = AudioState.isRecordingStopped;
       notifyListeners();
       print('==> 错误: $err');
@@ -216,6 +226,13 @@ class RecordWidgetProvider with ChangeNotifier {
             String dateInString = outputFormat.format(dateTime);
             recorderTxt = dateInString;
             print(recorderTxt);
+            percentage = newPercentage;
+            newPercentage += 0.34;
+            if (newPercentage > 100.0) {
+              percentage = 0.0;
+              newPercentage = 0.0;
+              stopRecord();
+            }
             notifyListeners();
           }
         });
@@ -225,6 +242,7 @@ class RecordWidgetProvider with ChangeNotifier {
       print(e);
       if (!_flutterSoundRecorder.isStopped) {
         stopRecord();
+        newPercentage = 0.0;
         audioState = AudioState.isWaiteRecord;
         if (_recorderSubscription != null) {
           _recorderSubscription.cancel();
@@ -254,6 +272,7 @@ class RecordWidgetProvider with ChangeNotifier {
 
   /// 停止录音
   void stopRecord() async {
+    newPercentage = 0.0;
     print(filePath);
     if (!_flutterSoundRecorder.isStopped) {
       audioState = AudioState.isRecordingStopped;
@@ -264,6 +283,7 @@ class RecordWidgetProvider with ChangeNotifier {
 
   /// 保存录音
   void sendRecord(BuildContext context) {
+    newPercentage = 0.0;
     Navigator.pop(context, AudioFile(fileName, filePath, dbLevel));
     Future.delayed(Duration(milliseconds: 200), () {
       audioState = AudioState.isWaiteRecord;
@@ -273,6 +293,7 @@ class RecordWidgetProvider with ChangeNotifier {
 
   /// 取消录音
   void cancelRecord(BuildContext context) {
+    newPercentage = 0.0;
     if (File(filePath).existsSync()) {
       File(filePath).delete();
     }

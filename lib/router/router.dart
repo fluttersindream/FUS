@@ -4,6 +4,8 @@ import 'package:FUS/router/engineering_service_router.dart';
 import 'package:FUS/router/study_router.dart';
 import 'package:flutter/material.dart';
 
+import 'flutter_widget_router.dart';
+
 /// Author: Asscre
 /// Editing time: 2020/8/26
 ///
@@ -15,6 +17,7 @@ class Router {
   void initRouters() {
     routes.addAll(engineeringServiceRouter);
     routes.addAll(studyRouter);
+    routes.addAll(flutterWidgetRouter);
   }
 
   static toPage(BuildContext context, String routeName, {dynamic arguments}) {
