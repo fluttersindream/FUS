@@ -9,7 +9,7 @@ import 'flutter_widget_router.dart';
 /// Author: Asscre
 /// Editing time: 2020/8/26
 ///
-class Router {
+class RouterConfig {
   static Map<String, Function> routes = {
     "/": (context) => HomePage(),
   };
@@ -21,7 +21,7 @@ class Router {
   }
 
   static toPage(BuildContext context, String routeName, {dynamic arguments}) {
-    if (Router.routes[routeName] == null) {
+    if (RouterConfig.routes[routeName] == null) {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (_) => NotFindPage()),
@@ -31,14 +31,14 @@ class Router {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: Router.routes[routeName](),
+            builder: RouterConfig.routes[routeName](),
           ),
         );
       } else {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: Router.routes[routeName](arguments),
+            builder: RouterConfig.routes[routeName](arguments),
           ),
         );
       }
@@ -47,7 +47,7 @@ class Router {
 
   static Future toCBPage(BuildContext context, String routeName, {dynamic arguments}) async {
     var cbData;
-    if (Router.routes[routeName] == null) {
+    if (RouterConfig.routes[routeName] == null) {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (_) => NotFindPage()),
@@ -57,14 +57,14 @@ class Router {
         cbData = await Navigator.push(
           context,
           MaterialPageRoute(
-            builder: Router.routes[routeName](),
+            builder: RouterConfig.routes[routeName](),
           ),
         );
       } else {
         cbData = await Navigator.push(
           context,
           MaterialPageRoute(
-            builder: Router.routes[routeName](arguments),
+            builder: RouterConfig.routes[routeName](arguments),
           ),
         );
       }

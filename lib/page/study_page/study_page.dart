@@ -1,5 +1,5 @@
 import 'package:FUS/config/style.dart';
-import 'package:FUS/router/router.dart';
+import 'package:FUS/router/router_config.dart';
 import 'package:FUS/widget/appbar_widget.dart';
 import 'package:FUS/widget/list_view_item.dart';
 import 'package:flutter/material.dart';
@@ -18,9 +18,9 @@ class _StudyPageState extends State<StudyPage> {
     _list = [
       ListItemModel('Dart', () {}),
       ListItemModel(
-          'Flutter Widget', () => Router.toPage(context, 'flutterWidgetPage')),
+          'Flutter Widget', () => RouterConfig.toPage(context, 'flutterWidgetPage')),
       ListItemModel('相机', () {}),
-      ListItemModel('语音', () => Router.toPage(context, 'soundWidgetPage')),
+      ListItemModel('语音', () => RouterConfig.toPage(context, 'soundWidgetPage')),
       ListItemModel('地图', () {}),
     ];
   }

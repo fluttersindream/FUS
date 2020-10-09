@@ -1,4 +1,4 @@
-import 'package:FUS/router/router.dart';
+import '../../../router/router_config.dart';
 import 'package:FUS/widget/appbar_widget.dart';
 import 'package:FUS/widget/list_view_item.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +15,11 @@ class _FlutterWidgetPageState extends State<FlutterWidgetPage> {
   void initState() {
     super.initState();
     _list = [
-      ListItemModel('Canvas', () => Router.toPage(context, 'canvasPage')),
+      ListItemModel(
+        'FlutterUi基础知识',
+        () => RouterConfig.toPage(context, 'flutterUiDetail', arguments: 'FlutterUi基础知识'),
+      ),
+      ListItemModel('Canvas', () => RouterConfig.toPage(context, 'canvasPage')),
       ListItemModel('Container', () {}),
       ListItemModel('Row', () {}),
       ListItemModel('Column', () {}),
@@ -170,7 +174,7 @@ class _FlutterWidgetPageState extends State<FlutterWidgetPage> {
       ListItemModel('RichText', () {}),
     ];
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -182,4 +186,3 @@ class _FlutterWidgetPageState extends State<FlutterWidgetPage> {
     );
   }
 }
-

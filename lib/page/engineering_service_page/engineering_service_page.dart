@@ -1,4 +1,4 @@
-import 'package:FUS/router/router.dart';
+import 'package:FUS/router/router_config.dart';
 import 'package:FUS/widget/appbar_widget.dart';
 import 'package:FUS/widget/button_widget.dart';
 import 'package:flutter/material.dart';
@@ -29,10 +29,10 @@ class EngineeringServicePage extends StatelessWidget {
 
   List<Widget> _setColumnChild(BuildContext context) {
     List _btn = [
-      ButtonModel(() => Router.toPage(context, 'ProviderPage'), 'Provider使用说明'),
-      ButtonModel(() => Router.toPage(context, 'WaterRippleDemo'), '水涟漪'),
-      ButtonModel(() => Router.toPage(context, 'RadarDemo'), '雷达扫描'),
-      ButtonModel(() => Router.toPage(context, 'TabsDemo'), '自定义Tab'),
+      ButtonModel(() => RouterConfig.toPage(context, 'ProviderPage'), 'Provider使用说明'),
+      ButtonModel(() => RouterConfig.toPage(context, 'WaterRippleDemo'), '水涟漪'),
+      ButtonModel(() => RouterConfig.toPage(context, 'RadarDemo'), '雷达扫描'),
+      ButtonModel(() => RouterConfig.toPage(context, 'TabsDemo'), '自定义Tab'),
     ];
 
     List<Widget> l = [];

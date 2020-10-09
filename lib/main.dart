@@ -3,13 +3,13 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'router/router.dart';
+import 'router/router_config.dart';
 import 'page/index_page.dart';
 
 /// Author: Asscre
 /// Editing time: 2020/8/26
 void main() {
-  Router router = Router();
+  RouterConfig router = RouterConfig();
   router.initRouters();
 
   if (Platform.isAndroid) {
