@@ -4,6 +4,10 @@ Flutter UI Study用于flutter学习，学习路线包括基础widget、相关插
 
 ## 项目使用版本：flutter 1.20.2 stable
 
+## 加入我们 共同进步
+- FlutterSinDream
+QQ群：871075992
+
 ## 涵盖三大类：开发总结、进阶学习、我的
 
 ### 开发总结
