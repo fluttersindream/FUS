@@ -1,10 +1,12 @@
-import 'dart:async';
-
 import 'package:FUS/config/style.dart';
+import 'package:FUS/pubs/screen_util.dart';
 import 'package:FUS/widget/appbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:ui';
+
+import 'package:flutter/services.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 class CanvasPage extends StatelessWidget {
   @override
@@ -45,29 +47,57 @@ class _HomeContentState extends State<HomeContent>
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        height: 200.0,
-        width: 200.0,
-        child: CustomPaint(
-          foregroundPainter: MyPainter(
-            lineColor: Style.grey,
-            completeColor: Style.orange,
-            completePercent: percentage,
-            width: 8.0,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: RaisedButton(
-              color: Style.green,
-              splashColor: Colors.transparent,
-              shape: CircleBorder(),
-              child: Text("Click"),
-              onPressed: () => setAnimation(),
-            ),
+    return ListView(
+      padding: EdgeInsets.symmetric(vertical: sw(32)),
+      children: [
+        _body(),
+        SizedBox(height: sw(32)),
+        _md(),
+      ],
+    );
+  }
+
+  Widget _body() {
+    return Container(
+      height: 200.0,
+      width: 200.0,
+      child: CustomPaint(
+        foregroundPainter: MyPainter(
+          lineColor: Style.grey,
+          completeColor: Style.orange,
+          completePercent: percentage,
+          width: 8.0,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: RaisedButton(
+            color: Style.green,
+            splashColor: Colors.transparent,
+            shape: CircleBorder(),
+            child: Text("Click"),
+            onPressed: () => setAnimation(),
           ),
         ),
       ),
+    );
+  }
+
+  Widget _md() {
+    return FutureBuilder(
+      future: rootBundle.loadString("lib/md/study_page/canvas.md"),
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        if (snapshot.hasData) {
+          return Markdown(
+            shrinkWrap: true,
+            physics: ScrollPhysics(),
+            data: snapshot.data,
+          );
+        } else {
+          return Center(
+            child: Text("加载中..."),
+          );
+        }
+      },
     );
   }
 

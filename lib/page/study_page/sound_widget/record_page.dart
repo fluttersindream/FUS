@@ -1,3 +1,4 @@
+import 'package:FUS/config/style.dart';
 import 'package:FUS/page/commom/record_widget/record_widget.dart';
 import 'package:FUS/pubs/screen_util.dart';
 import 'package:FUS/widget/appbar_widget.dart';
@@ -45,7 +46,18 @@ class _RecordPageState extends State<RecordPage> {
   }
 
   Widget _fileName() {
-    return Text(fileName);
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: sw(20)),
+      padding: EdgeInsets.all(sw(20)),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(sw(15)),
+        color: Style.white,
+        boxShadow: [
+          BoxShadow(color: Style.grey, offset: Offset(1, 1), blurRadius: sw(5))
+        ],
+      ),
+      child: Text(fileName.isEmpty ? '暂无文件' : '文件地址：$fileName'),
+    );
   }
 
   Widget _button(BuildContext ctx) {
