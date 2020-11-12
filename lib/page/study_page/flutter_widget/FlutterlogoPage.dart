@@ -30,7 +30,6 @@ class _HomeContentState extends State<HomeContent> {
      child:Column(
        children: [
          _defaultFlog(),
-         Text('不同的style '),
          _styleLogo(),
          _durLogo()
        ],
@@ -109,7 +108,6 @@ class _HomeContentState extends State<HomeContent> {
         width: 100,
         height: 100,
         child: RaisedButton(
-
           padding: EdgeInsets.all(10),
           color: Colors.green,
           child: Text(
