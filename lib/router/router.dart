@@ -21,6 +21,7 @@ class Router {
   }
 
   static toPage(BuildContext context, String routeName, {dynamic arguments}) {
+    print(routeName);
     if (Router.routes[routeName] == null) {
       Navigator.push(
         context,
