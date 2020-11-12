@@ -7,7 +7,7 @@ import 'router/router_config.dart';
 import 'page/index_page.dart';
 
 /// Author: Asscre
-/// Editing time: 2020/8/26
+/// Editing time: 2020/11/12
 void main() {
   RouterConfig router = RouterConfig();
   router.initRouters();
