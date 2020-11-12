@@ -19,7 +19,6 @@ class ProviderWidget<T extends ChangeNotifier> extends StatefulWidget {
 
 class _ProviderWidgetState<T extends ChangeNotifier>
     extends State<ProviderWidget<T>> {
-
   @override
   void initState() {
     super.initState();
